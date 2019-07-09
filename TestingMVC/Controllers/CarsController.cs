@@ -18,6 +18,20 @@ namespace TestingMVC.Controllers
             _context = context;
         }
 
+        public IActionResult NameList()
+        {
+            var names = new List<string>();
+
+            foreach (var car in _context.Car)
+            {
+                names.Add(car.Model);
+            }
+
+            ViewData["Names"] = names;
+
+            return View();
+        }
+
         // GET: Cars
         public async Task<IActionResult> Index()
         {

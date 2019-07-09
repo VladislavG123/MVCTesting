@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "NameList";
+    Layout = null;
+}
+
+<table>
+    <tr>
+        <td>
+            <h4>Models</h4>
+        </td>
+    </tr>
+     
+    @{ foreach (string name in (ViewData["Names"] as List<string>))
+        {
+            <tr>
+                <td>
+                   • @name
+                </td>
+            </tr>
+        }
+    }
+</table>
